@@ -1,0 +1,57 @@
+Dear Mr./Ms. CTO,
+
+I have completed the HCI environment for our key e-commerce app.
+I have performed the following tasks as prescribed by our key stakeholders.
+
+First, in acccordance to your requirements, I have created a production environment
+as well as a development environment for our teams in accordance to a 3-tier 
+architecture consisting of the web server layer, the application layer, and 
+the database layer. 
+
+Most importantly, these environments can be flexibly configured by our teams,
+allowing them to freely scale up vCPU and Memory resources without bottleneck.
+I have enabled automatic snapshots of our production environment on an hourly 
+basis so that they can be restored with at most an 1-hour downtime window
+after a data loss or a failure.
+
+The Production environment consists of
+  Web layer         | web-prod | prod-net | C:\Images\CentOs
+  Application layer | app-prod | prod-net | C:\Images\CentOs
+  Database layer    | db-prod  | prod-net | C:\Images\Windows
+
+The Development environment consists of
+  Web layer         | web-dev | dev-net | C:\Images\CentOs
+  Application layer | app-dev | dev-net | C:\Images\CentOs
+  Database layer    | db-dev  | dev-net | C:\Images\Windows
+  
+I have also successfully confirmed the completion of the removal of a key VM 
+(the DB prod vm) and being able to restore it using a full restoration within
+the required time bound SLA.
+
+
+As for the requirements of our Networking team, the following steps have been taken:
+A managed network using IPAM/DHCP from an IP Pool has been created with the name
+prod-net, along with an id of vlan 0, which contains a pool of IP addresses 
+ranging from 172.31.0.210 to 172.31.0.23.
+
+A unmanaged network has been created for the development environment with the name
+dev-net, along with an id of vlan 101, which uses the 172.31.101.0/24 range.
+
+
+And for our SysAdmin requirements, the NTP has been created under the public service
+pool.ntp.org and 8.8.8.8 for the Domain Naming Service.  The VMs  images have 
+been created using a Storage Container called Images, which contains a Windows 
+and a CentOs image (uploaded from C:\Images directory).
+Furthermore, each of the VMs has a configuration of 1 vCPU and 4 GB of RAM, with
+the web and application VMs using the CentOs images while the database VM is
+using the Windows image. 
+
+
+I truly believe that this new HCI along with the configurations here will be
+a major step for our company's agility, resilience and reduce our bottlenecks.
+
+Should you have any further requests or questions, please feel free to let me know.
+
+Sincerely,
+Xu Ren
+
